@@ -1,0 +1,97 @@
+p: Project = input;
+commentData: output collection of string;
+revId:string;
+chngKind:string;
+fileName:string;
+
+
+isComment:=function(node: Statement): bool
+{
+	if(node.kind!=StatementKind.EXPRESSION)
+		return false;
+	if(def(node.expressions)==false)
+		return false;
+	if(len(node.expressions)!=1)
+		return false;
+	if(def(node.expressions[0].kind)==false)
+		return false;
+	if(node.expressions[0].kind!=ExpressionKind.LITERAL)
+		return false;
+	return true;
+};
+
+getCommentChange:=function(node: Statement): string
+{
+	if(def(node.expressions[0].change)==false)
+		return "";
+	return string(node.expressions[0].change);
+	
+};
+getCommentText:=function(node: Statement): string
+{
+	if(def(node.expressions[0].literal)==false)
+		return "";
+	txt:=string(node.expressions[0].literal);
+	txt = strreplace(txt, ",", ";", true);
+	
+	txt = trim(txt);
+	txt = strreplace(txt, "\n", " || ", true);
+	txt = strreplace(txt, "\\n", " || ", true);
+	
+	return txt;	
+};
+	   
+visit(p, visitor { 
+	
+
+before node: Project->
+	{
+	    if(node.name != "HealthCatalyst/healthcareai-py")
+	        {
+	            stop;
+	        }
+	}
+	
+ before node: Revision ->
+	{	
+		revId=string(node.id);
+	}
+  before n: ChangedFile ->
+    {
+    	fileName=n.name;
+    	
+    	#if(n.name!="a.py")
+    		#stop;
+    	node:=getast(n);
+    	
+    	
+    	foreach(i:int;def(node.namespaces[i]))
+    	{
+
+    	  if(def(node.namespaces[i].statements))
+	       {
+	       		foreach(j:int;def(node.namespaces[i].statements[j]))
+	       		{
+	       			if(isComment(node.namespaces[i].statements[j]))
+	       			{
+	       				chng:=string(getCommentChange(node.namespaces[i].statements[j]));
+
+
+	       				if(chng!="" and chng!="UNKNOWN")
+	       				{
+	       				    txt:=getCommentText(node.namespaces[i].statements[j]);
+
+	       				    commentData<<p.name+","+revId+","+fileName+","+txt+","+chng;
+
+	       				}
+	       					
+	       			}
+	       		}
+	       	
+	       }
+    	}
+    }
+    
+
+    
+});

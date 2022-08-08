@@ -1,0 +1,138 @@
+p: Project = input;
+nodePrint: output sum[string] of int;
+
+revision: Revision;
+revId: string;
+repo: CodeRepository;
+commitId: string;
+myCount: int;
+pname: string;
+
+
+
+
+
+visit(p, visitor {
+
+	before node: Project -> {
+
+		pname = node.name;
+	}
+	
+	before node: CodeRepository -> {
+		
+		repo=node;
+
+  	}
+
+	before node: Revision ->
+    {
+        
+    	 revision=node;
+
+		 myCount = 0;
+		 revId = node.id;
+
+    }
+    
+    before node: ChangedFile ->
+    {
+    
+    	if(def(node.kind))
+    	{
+    		if(node.kind==FileKind.SOURCE_PY_ERROR)
+    		{
+    			stop;
+    		}
+    	}
+
+    	prevFile:=get_previous_file(repo,revision,node);
+		myCount = 0;
+    	
+    	if(def(prevFile))
+    	{
+
+			visit(getdiff(node,prevFile, "FORWARD"), visitor {
+
+				before node: Namespace ->
+				{
+
+					if (def(node.change))
+					{
+						myCount++;
+					}
+				}
+				
+				before node: Declaration ->
+				{
+
+					if (def(node.change))
+					{
+						myCount++;
+					}
+				}
+				
+				before node: Type ->
+				{
+
+					if (def(node.change))
+					{
+						myCount++;
+					}
+				}
+				
+				before node: Method ->
+				{
+
+					if (def(node.change))
+					{
+						myCount++;
+					}
+				}
+				
+				before node: Variable ->
+				{
+
+					if (def(node.change))
+					{
+						myCount++;
+					}
+				}
+				
+				before node: Statement ->
+				{
+
+					if (def(node.change))
+					{
+						myCount++;
+					}
+				}
+				
+				before node: Expression ->
+				{
+
+					if (def(node.change))
+					{
+						myCount++;
+					}
+				}
+				
+				before node: Modifier ->
+				{
+
+					if (def(node.change))
+					{
+						myCount++;
+					}
+				}
+				
+				
+
+			});
+
+    	}
+
+		nodePrint[pname + "," + revId] << myCount;
+    }
+    
+});

@@ -1,0 +1,14 @@
+p: Project = input;
+counts: output collection[string] of string;
+
+visit(p, visitor {
+    
+    before node: Revision ->
+    {
+        foreach(i:int; def(node.parents[i]))
+            {
+                counts[node.id] << string(node.parents[i]);
+            }
+    }
+    
+});
