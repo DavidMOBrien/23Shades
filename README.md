@@ -11,5 +11,12 @@ This Artifact is organized as follows: \
 \
 ***python_scripts***: the scripts used to filter our extracted dataset of source code comments. \
 \
-***Reproducibility Instructions:*** Due to GitHub file size restraints, download the supplementary data at: https://drive.google.com/drive/folders/1RksJKHvUoj2Qq_px8n2Gje1Bk0TtO52F , then place "1-output.txt" (the raw output from get_comment_changes.boa) and "5-cc_output.txt" (the output from previous work's classifier (https://github.com/tkdsheep/TechnicalDebt/tree/master/src)) into the python_scripts folder. All other data in the Google Drive is for replication comparison only. Once both files are in python_scripts, run each script in the numerical order, each script will output a file used in a later script. All results from this process should be exactly as stated in Table 1 of the paper.
+***Reproducibility Instructions:***
 
+1: Download a default environment of Python 3: https://www.python.org/downloads/
+
+2: Due to GitHub file size constraints, download all supplementary data at (ZENODO LINK)
+
+3: Place "1-output.txt" (the raw output from our Boa queries) and "5-cc_output.txt" (the output from previous work's classifier on our dataset (https://github.com/tkdsheep/TechnicalDebt/tree/master/src)) into the python_scripts folder in this GitHub repository. All other data from Zenodo is for replication comparison only.
+
+4: Run the Python scripts in the python_scripts folder in numerical order. After the execution of each script, a numbered output file will be produced that is used in a later script. These files are also in our Zenodo repository as well, so users can compare their reproduced output with the output used in our study to verify reproducibility. The broad results from these steps are stated in Table 1 of our paper.
