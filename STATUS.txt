@@ -1,0 +1,11 @@
+This artifact is applying towards the three badges "Evaluated-Functional", "Evaluated-Reusable", 
+and "Available" for the following reasons:
+
+1: Evaluated-Functional - We have reproduced the data presented in our ESEC/FSE paper multiple times
+using the provided instructions in the artifact, and have provided the documentation and datasets to
+allow others to reproduce our results as well.
+
+2: Evaluated-Reusable - We have split our dataset generation process into many reusable pieces, so that
+future studies may reuse our entire process, or modify each individual stage to best fit their studies.
+
+3: Available - Our data and scripts are available to the public on our GitHub repository.

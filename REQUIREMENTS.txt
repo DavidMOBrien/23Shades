@@ -1,0 +1,9 @@
+Requirements to replicate this study:
+
+	- A standard Python 3 environment, no additional packages needed to 
+	install. Follow https://www.python.org/downloads/ to install a default
+	Python environment.
+
+	- A Boa MSR user account at https://boa.cs.iastate.edu/boa/index.php to
+	run queries on publically available datasets. The output for this step is
+	provided in the Google Drive as "1-output.txt".

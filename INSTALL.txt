@@ -1,0 +1,11 @@
+Once a default environment of Python 3 is installed from https://www.python.org/downloads/ or another
+Python provider, a user can verify the correctness of installation by:
+
+1. Download data from Zenodo dataset
+
+2. Clone 23Shades GitHub repository
+
+3. Move "1-output.txt" from downloaded Zenodo dataset to "python_scripts" folder in GitHub
+
+4. Run "2-create_ids.py" with Python to create a "2-id_output.txt" file. User can then check that
+the generated "2-id_output.txt" matches with the file of the same name on our Zenodo dataset.
