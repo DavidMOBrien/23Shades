@@ -15,7 +15,7 @@ This Artifact is organized as follows: \
 
 1: Download a default environment of Python 3: https://www.python.org/downloads/
 
-2: Due to GitHub file size constraints, download all supplementary data at (ZENODO LINK)
+2: Due to GitHub file size constraints, download all supplementary data at https://zenodo.org/record/6975843#.YvO1fXbMK70
 
 3: Place "1-output.txt" (the raw output from our Boa queries) and "5-cc_output.txt" (the output from previous work's classifier on our dataset (https://github.com/tkdsheep/TechnicalDebt/tree/master/src)) into the python_scripts folder in this GitHub repository. All other data from Zenodo is for replication comparison only.
 
