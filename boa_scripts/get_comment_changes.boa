@@ -46,7 +46,7 @@ visit(p, visitor {
 
 before node: Project->
 	{
-	    if(node.name != "HealthCatalyst/healthcareai-py")
+	    if(node.stars != 10)
 	        {
 	            stop;
 	        }

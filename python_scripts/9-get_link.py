@@ -32,7 +32,7 @@ def isRemoval(item, compare):
 
 
 
-with open('8-autogen_removed_sorted.csv', 'r') as inputFile:
+with open('8-autogen_removed_sorted.txt', 'r') as inputFile:
     dataset = inputFile.readlines()
 
 #just for logging purposes

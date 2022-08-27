@@ -69,6 +69,6 @@ for item in dataset:
     if test_sample(item.split(',')):
         toWrite.append(item)
 
-with open('8-autogen_removed.txt', 'w', errors = 'ignore', encoding = 'utf-8') as outputFile:
+with open('8-autogen_removed_sorted.txt', 'w', errors = 'ignore', encoding = 'utf-8') as outputFile:
     for item in toWrite:
         outputFile.write(item)
