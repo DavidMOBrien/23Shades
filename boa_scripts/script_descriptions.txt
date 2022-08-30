@@ -1,0 +1,6 @@
+get_comment_changes.boa: The main script of our study. This script retrieves all comment changes made in every revision of the
+Boa dataset provided. Data for each comment change includes: repository name, file name, revision ID, comment text, and change type.
+
+get_diff.boa: The script of our study which calculates the number of modified AST nodes within a source code revision.
+
+get_parents.boa: The script of our study which outputs all parent-children relationships between source code revisions.
