@@ -1,5 +1,7 @@
 # 23Shades
-Artifact for the ESEC/FSE paper "23 Shades of Machine Learning Technical Debt: An Empirical Study"
+Artifact for the ESEC/FSE paper "23 Shades of Self-Admitted Technical Debt: An Empirical Study on Machine Learning Software"
+
+This Artifact is split up as such: the labeling process, data processing scripts, and final data used in our study is present on this GitHub repository. Due to GitHub file restraints, the output from each intermediary step in our process is available for reproducibility comparison on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6975843.svg)](https://doi.org/10.5281/zenodo.6975843)
 
 This Artifact is organized as follows: \
 \
