@@ -1,7 +1,7 @@
 # 23Shades
 Artifact for the ESEC/FSE paper "23 Shades of Self-Admitted Technical Debt: An Empirical Study on Machine Learning Software"
 
-This Artifact is split up as such: the labeling process, data processing scripts, and final data used in our study is present on this GitHub repository. Due to GitHub file restraints, the output from each intermediary step in our process is available for reproducibility comparison on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.6975843.svg)](https://doi.org/10.5281/zenodo.6975843)
+This Artifact is split up as such: the labeling process, data processing scripts, and final data used in our study is present on this GitHub repository. Due to GitHub file restraints, the output from each intermediary step in our process is available for reproducibility comparison on Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7033365.svg)](https://doi.org/10.5281/zenodo.7033365)
 
 This Artifact is organized as follows: \
 \
@@ -17,7 +17,7 @@ This Artifact is organized as follows: \
 
 1: Download a default environment of Python 3: https://www.python.org/downloads/
 
-2: Due to GitHub file size constraints, download all supplementary data at https://zenodo.org/record/6975843#.YvO1fXbMK70
+2: Due to GitHub file size constraints, download all supplementary data at https://zenodo.org/record/7033365#.Yw1vbNPMK70
 
 3: Place "1-output.txt" (the raw output from our Boa queries) and "5-cc_output.txt" (the output from previous work's classifier on our dataset (https://github.com/tkdsheep/TechnicalDebt/tree/master/src)) into the python_scripts folder in this GitHub repository. All other data from Zenodo is for replication comparison only.
 
